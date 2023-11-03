@@ -1,0 +1,24 @@
+<div class="post-preview">
+    <a href="post.html">
+    {% for blog in data: %}
+        {%if blog["id"] == 3 %}
+            <h2 class="post-title">{{blog["title"]}}</h2>
+        {% endif %}
+    {% endfor %}
+
+    {% for blog in data: %}
+    {%if blog["id"] == 3 %}
+    <h3 class="post-subtitle">{{blog["subtitle"]}}</h3>
+    {% endif %}
+    {% endfor %}
+        
+    </a>
+        {% for blog in data: %}
+            {%if blog["id"] == 3 %}
+                <p class="post-meta">{{blog["author"]}}</p>
+            {% endif %}
+        {% endfor %}
+    
+</div>
+<!-- Divider-->
+<hr class="my-4" />
