@@ -1,12 +1,13 @@
 from flask import Flask, render_template
 import requests
+import os
 
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    URL = "https://api.npoint.io/eb6cd8a5d783f501ee7d"
+    URL = os.environ.get("https://api.npoint.io/eb6cd8a5d783f501ee7d")
     response = requests.get(URL)
     data = response.json()
     return render_template('index.html', data=data)
@@ -21,7 +22,7 @@ def contact():
 
 @app.route('/blog_1')
 def cactus():
-    URL = "https://api.npoint.io/eb6cd8a5d783f501ee7d"
+    URL = os.environ.get("https://api.npoint.io/eb6cd8a5d783f501ee7d")
     response = requests.get(URL)
     data = response.json()
     ID = 1
@@ -44,4 +45,4 @@ def fasting():
     return render_template('post.html', ID=ID, data=data)
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=False)
