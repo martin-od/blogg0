@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    URL = os.environ.get("https://api.npoint.io/eb6cd8a5d783f501ee7d")
+    endpoint = os.environ.get("ENDPOINTNPOINT")
+    URL = f"https://api.npoint.io/{endpoint}"
     response = requests.get(URL)
     data = response.json()
     return render_template('index.html', data=data)
@@ -22,7 +23,8 @@ def contact():
 
 @app.route('/blog_1')
 def cactus():
-    URL = os.environ.get("https://api.npoint.io/eb6cd8a5d783f501ee7d")
+    endpoint = os.environ.get("ENDPOINTNPOINT")
+    URL = f"https://api.npoint.io/{endpoint}"
     response = requests.get(URL)
     data = response.json()
     ID = 1
@@ -30,7 +32,8 @@ def cactus():
 
 @app.route('/blog_2')
 def boring():
-    URL = "https://api.npoint.io/eb6cd8a5d783f501ee7d"
+    endpoint = os.environ.get("ENDPOINTNPOINT")
+    URL = f"https://api.npoint.io/{endpoint}"
     response = requests.get(URL)
     data = response.json()
     ID = 2
@@ -38,7 +41,8 @@ def boring():
 
 @app.route('/blog_2')
 def fasting():
-    URL = "https://api.npoint.io/eb6cd8a5d783f501ee7d"
+    endpoint = os.environ.get("ENDPOINTNPOINT")
+    URL = f"https://api.npoint.io/{endpoint}"
     response = requests.get(URL)
     data = response.json()
     ID = 3
